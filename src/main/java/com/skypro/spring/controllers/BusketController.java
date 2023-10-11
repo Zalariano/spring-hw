@@ -22,7 +22,6 @@ public class BusketController {
     @GetMapping("/add")
     public List<Integer> add(@RequestParam List<Integer> ids) {
         return busketService.add(ids);
-
     }
 
     @GetMapping("/get")
