@@ -1,21 +1,25 @@
 package com.skypro.spring.service;
 
+import com.skypro.spring.model.Busket;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class BusketService {
-    public List<Integer> itemes = new ArrayList<>();
+    private final Busket busket;
+
+    public BusketService(Busket busket) {
+        this.busket = busket;
+    }
 
     public List<Integer> add(List<Integer> ids) {
-        itemes.addAll(ids);
-        return ids;
+        return busket.add(ids);
 
     }
 
-    public List<Integer> get() {
-        return itemes;
+    public Map<Integer, Integer> get() {
+        return busket.get();
     }
 }
